@@ -1,0 +1,12 @@
+<%= semantic_form_for [:admin, @news] do |f| %>
+    <%= f.input :title%>
+    <%=f.semantic_fields_for :content, f.object.content || f.object.build_content do |field|%>
+      <%= field.input :body, :as => :text,:input_html=>{:id=>"redactor_content"}%>
+    <%end%>
+     <%= f.input :is_recommend,as: :boolean%>
+     <%= f.input :image,as: :file%>
+    <%= f.actions do %>
+      <%= f.action :submit%>
+      <%= f.action :cancel ,:wrapper_html => { :class => 'cancel'} %>
+    <% end %>
+  <% end %>
