@@ -1,0 +1,353 @@
+*** sjm
+**** gem 'best_in_place', ‘2.1.0'
+https://github.com/bernat/best_in_place
+
+sjm@sjm-tj:~/nethd/tianji/tianjicom$ git grep -i best_in_place
+Gemfile:gem 'best_in_place', '2.1.0'
+app/views/profile/_p_top.html.erb:  $('.best_in_place')
+app/views/profile/_p_top.html.erb:  .best_in_place()
+app/views/profile/_p_top.html.erb:  .live("best_in_place:activate", function() {
+app/views/profile/_p_top.html.erb:  <span><%= best_in_place @account, :mobile_nu
+app/views/profile/_p_top.html.erb:      <span><%= best_in_place work, :url, :pat
+app/views/profile/_p_top.html.erb:      <span><%= best_in_place work, :start_dat
+app/views/profile/_p_top.html.erb:      <span><%= best_in_place work, :end_date,
+app/views/profile/_p_top.html.erb:      <span><%= best_in_place work, :detail, :
+(END)
+
+
+
+Best in Place is a jQuery based AJAX Inplace-Editor that takes profit of RESTful server-side controllers to allow users to edit stuff with no need of forms. If the server have standard defined REST methods, particularly those to UPDATE your objects (HTTP PUT), then by adding the Javascript file to the application it is making all the fields with the proper defined classes to become user in-place editable.
+
+The editor works by PUTting the updated value to the server and GETting the updated record afterwards to display the updated value.
+**** D gem 'ffi', '1.9.0'
+https://github.com/ffi/ffi
+
+Ruby-FFI is a ruby extension for programmatically loading dynamic libraries, binding functions within them, and calling those functions from Ruby code. Moreover, a Ruby-FFI extension works without changes on Ruby and JRuby
+**** D gem 'kgio', '2.8.0'
+http://rubygems.org/gems/kgio
+
+kgio provides non-blocking I/O methods for Ruby without raising exceptions on EAGAIN and EINPROGRESS. It is intended for use with the Unicorn and Rainbows! Rack servers, but may be used by other applications (that run on Unix-like platforms).
+**** D gem 'raindrops', '0.11.0'
+http://rubygems.org/gems/raindrops
+
+
+
+Raindrops is a real-time stats toolkit to show statistics for Rack HTTP servers. It is designed for preforking servers such as Rainbows! and Unicorn, but should support any Rack HTTP server under Ruby 2.0, 1.9, 1.8 and Rubinius on platforms supporting POSIX shared memory. It may also be used as a generic scoreboard for sharing atomic counters across multiple processes.
+**** gem "friendly_id", "~> 4.0.9”
+https://github.com/norman/friendly_id
+
+sjm@sjm-tj:~/nethd/tianji/tianjicom$ git grep -i Friendly_Id
+Gemfile:gem "friendly_id", "~> 4.0.9"
+app/models/company.rb:  friendly_id :abbrev
+
+
+FriendlyId is the "Swiss Army bulldozer" of slugging and permalink plugins for Active Record. It lets you create pretty URLs and work with human-friendly strings as if they were numeric ids. 
+**** gem "roo", '1.12.2'
+https://github.com/Empact/roo
+
+sjm@sjm-tj:~/nethd/tianji/tianjicom$ git grep -i Roo::
+app/models/ce_question.rb:      excel = Roo::Excel.new("#{Rails.root}/db/subjects.xls")
+
+Roo can access the contents of various spreadsheet files. It can handle * OpenOffice * Excel * Google spreadsheets * Excelx * LibreOffice * CSV
+**** D gem 'tilt', '1.4.1'
+https://github.com/rtomayko/tilt/
+
+sjm@sjm-tj:~/nethd/tianji/tianjicom$ git grep -i tilt
+Gemfile:gem 'tilt', '1.4.1'
+app/assets/javascripts/jquery/jquery.KinSlideshow-1.2.1.min.js:eval((function(a,b){return a.replace(/\w+/g, function(ss){ return b[parseInt(ss, 36)]; }); })("(
+
+
+Generic interface to multiple Ruby template engines
+**** gem "galetahub-simple_captcha", '0.1.5', :require => "simple_captcha"
+https://github.com/izzm/simple-captcha
+
+sjm@sjm-tj:~/nethd/tianji/tianjicom$ git grep -i SimpleCaptcha
+app/controllers/account/accounts_controller.rb:  include SimpleCaptcha::ControllerHelpers
+app/controllers/events_controller.rb:  include SimpleCaptcha::ControllerHelpers
+db/migrate/20130608173157_create_simple_captcha_data.rb:class CreateSimpleCaptchaData < ActiveRecord::Migration
+sjm@sjm-tj:~/nethd/tianji/tianjicom$ git grep -i Simple_Captcha
+Gemfile:gem "galetahub-simple_captcha", '0.1.5', :require => "simple_captcha"
+app/controllers/account/accounts_controller.rb:    if simple_captcha_valid?
+app/models/article.rb:  apply_simple_captcha :message => "请输入正确验证码"
+app/models/event.rb:  apply_simple_captcha :message => "请输入正确验证码"
+app/models/topic.rb:  apply_simple_captcha :message => "请输入正确验证码"
+app/views/account/accounts/_get_sms_graph_captcha.slim:= show_simple_captcha
+app/views/account/accounts/verify_code.html.erb:    <div id="simple_captcha" class="hide">
+app/views/account/accounts/verify_code.html.erb:      <%= show_simple_captcha %>
+app/views/account/accounts/verify_code.html.erb:  $('#real_code').attr('src', $('.simple_captcha_image img').attr('src'));
+app/views/account/accounts/verify_code.html.erb:  $('#simple_captcha').load("/account/accounts/get_sms_graph_captcha",
+app/views/account/accounts/verify_code.html.erb:  $('#real_code').attr('src', $('.simple_captcha_image img').attr('src'));
+app/views/articles/new.html.erb:          <%= f.simple_captcha %>
+app/views/events/_form.html.erb:        <%= f.simple_captcha %>
+app/views/simple_captcha/_simple_captcha.erb:  .simple_captcha{border: 0 none; padding: 5px !important;margin-top: 5px;}
+app/views/simple_captcha/_simple_captcha.erb:  .simple_captcha,
+app/views/simple_captcha/_simple_captcha.erb:  .simple_captcha div{display: table;}
+app/views/simple_captcha/_simple_captcha.erb:  .simple_captcha .simple_captcha_field,
+app/views/simple_captcha/_simple_captcha.erb:  .simple_captcha .simple_captcha_image{
+app/views/simple_captcha/_simple_captcha.erb:  .simple_captcha .simple_captcha_image{
+app/views/simple_captcha/_simple_captcha.erb:  .simple_captcha .simple_captcha_image img{
+app/views/simple_captcha/_simple_captcha.erb:  .simple_captcha .simple_captcha_label{font-size: 12px;}
+app/views/simple_captcha/_simple_captcha.erb:  .simple_captcha .simple_captcha_field input{
+app/views/simple_captcha/_simple_captcha.erb:<div class='simple_captcha'>
+app/views/simple_captcha/_simple_captcha.erb:  <div class='simple_captcha_image'>
+app/views/simple_captcha/_simple_captcha.erb:    <%= simple_captcha_options[:image] %>
+app/views/simple_captcha/_simple_captcha.erb:  <div class='simple_captcha_field'>
+app/views/simple_captcha/_simple_captcha.erb:    <%= simple_captcha_options[:field] %>
+app/views/topics/_form.html.erb:    <%= f.simple_captcha %>
+config/locales/lib/simple_captcha.yml:  simple_captcha:
+db/migrate/20130608173157_create_simple_captcha_data.rb:    create_table :simple_captcha_data do |t|
+db/migrate/20130608173157_create_simple_captcha_data.rb:    add_index :simple_captcha_data, :key, :name => "idx_key"
+db/migrate/20130608173157_create_simple_captcha_data.rb:    drop_table :simple_captcha_data
+spec/controllers/account/accounts_controller_spec.rb:        controller.stub(:simple_captcha_valid?).and_return(true)
+spec/controllers/account/accounts_controller_spec.rb:        controller.stub(:simple_captcha_valid?).and_return(false)
+sjm@sjm-tj:~/nethd/tianji/tianjicom$ 
+
+
+Rails 3 support now! Simple Captcha is the simplest and a robust captcha plugin. Its implementation requires adding up a single line in views and in controllers/models.http://expressica.com/simple_captcha
+
+**** gem "showbuilder",        "~> 0.0.15”
+https://github.com/ery/showbuilder
+
+sjm@sjm-tj:~/nethd/tianji/tianjicom$ nano gem_dependency.rb
+sjm@sjm-tj:~/nethd/tianji/tianjicom$ git grep -i show_model
+app/helpers/admin/show_builder_extension_helper.rb:    def show_model_table(models, itext_base = nil, &block)
+app/helpers/admin/show_builder_extension_helper.rb:          contents << show_model_table_header(itext_base, &block)
+app/helpers/admin/show_builder_extension_helper.rb:          contents << show_model_table_body(models, &block)
+app/helpers/admin/show_builder_extension_helper.rb:    def show_model_form(models, options ={}, &block)
+app/views/admin/email_backgrounds/_form.slim:= show_model_form [:admin, @email_template] do |form|
+app/views/admin/email_backgrounds/get_preview.slim:= show_model_form [:admin, @email_template], :url => {:action => :preview}, :method => :post, :html => {:tar
+app/views/admin/email_backgrounds/index.slim:= show_model_table @email_templates, :email_background_mongo do |row|
+app/views/admin/email_backgrounds/templates/_base.slim:  = show_model_form current_model, url: send("admin_email_background_#{@model_name}_path", @email_backgr
+app/views/admin/email_backgrounds/templates/_edus.slim:  = show_model_form email_edu, url: admin_email_background_edu_path(@email_background, email_edu), html:
+app/views/admin/read_book/book_intergrations/_form.slim:= show_model_form [:admin, :read_book, @book_intergration] do |form|
+app/views/admin/read_book/book_intergrations/index.slim:= show_model_table @book_intergrations do |row|
+app/views/admin/read_book/books/_form.slim:= show_model_form [:admin, :read_book, @book] do |form|
+app/views/admin/read_book/books/index.slim:= show_model_table @books do |row|
+app/views/admin/read_book/books/show.slim:= show_model_view @book do |view|
+app/views/admin/read_book/btags/index.slim:= show_model_table @btags do |row|
+app/views/admin/read_book/reco_rules/_form.slim:= show_model_form [:admin, :read_book, @reco_rule] do |form|
+app/views/admin/read_book/reco_rules/index.slim:= show_model_table @industries do |row|
+
+A Rails View Helper. Base on Twitter Bootstrap v2.0.4. Fast show model/s as view, form, table.
+
+*** gem dependence
+gems = `bundle show`
+gems = gems.gsub("\n  * ", '!').gsub(")", '').gsub(' (', '!')
+gems = gems[0, gems.length-1]
+gems = gems.split('!')
+gems = gems[1, gems.length]
+
+gemlist = {}
+gems.each_with_index do |g, i|
+  gemlist[gems[i-1]] = [g]  if (i % 2).eql?(1)
+end
+
+gemlist.each do |k, v|
+  ds = `gem dependency #{k} -v #{v.first}`
+  if ds =~ /\n /
+    ds = ds[0, ds.length-2].split("\n  ")
+    gemlist[k] << ds[1,ds.length] if ds.length > 1
+  end
+end
+
+
+irb(main):023:0> gemlist.each{|k, v| puts "#{k} => #{v}"}
+actionmailer => ["3.2.15", ["actionpack (= 3.2.15)", "mail (~> 2.5.4)"]]
+actionpack => ["3.2.15", ["activemodel (= 3.2.15)", "activesupport (= 3.2.15)", "builder (~> 3.0.0)", "erubis (~> 2.7.0)", "journey (~> 1.0.4)", "rack (~> 1.4.5)", "rack-cache (~> 1.2)", "rack-test (~> 0.6.1)", "sprockets (~> 2.2.1)", "tzinfo (~> 0.3.29, development)"]]
+activemodel => ["3.2.15", ["activesupport (= 3.2.15)", "builder (~> 3.0.0)"]]
+activerecord => ["3.2.15", ["activemodel (= 3.2.15)", "activesupport (= 3.2.15)", "arel (~> 3.0.2)", "tzinfo (~> 0.3.29)"]]
+activeresource => ["3.2.15", ["activemodel (= 3.2.15)", "activesupport (= 3.2.15)"]]
+activesupport => ["3.2.15", ["i18n (>= 0.6.4, ~> 0.6)", "multi_json (~> 1.0)"]]
+acts_as_list => ["0.3.0", ["activerecord (>= 3.0)", "bundler (>= 1.0.0, development)", "rdoc (>= 0, development)", "sqlite3 (>= 0, development)"]]
+ansi => ["1.4.3", ["detroit (>= 0, development)", "lemon (>= 0, development)", "qed (>= 0, development)"]]
+arel => ["3.0.2", ["hoe (~> 2.13, development)", "minitest (~> 2.11, development)", "rdoc (~> 3.10, development)"]]
+authlogic => ["3.3.0", ["activerecord (>= 3.2)", "activesupport (>= 3.2)", "bcrypt-ruby (>= 0, development)", "i18n (>= 0, development)", "rake (>= 0, development)", "scrypt (>= 0, development)", "sqlite3 (>= 0, development)", "timecop (>= 0, development)"]]
+awesome_print => ["1.1.0", ["fakefs (>= 0.2.1, development)", "rspec (>= 2.6.0, development)"]]
+axiom-types => ["0.0.5", ["bundler (>= 1.3.5, ~> 1.3, development)", "descendants_tracker (~> 0.0.1)", "ice_nine (~> 0.9)"]]
+backports => ["3.3.5"]
+best_in_place => ["2.1.0", ["capybara (~> 1.1.2, development)", "jquery-rails (>= 0)", "nokogiri (>= 0, development)", "rails (~> 3.1)", "rspec-rails (~> 2.8.0, development)"]]
+bluepill => ["0.0.60", ["activesupport (>= 3.0.0)", "bundler (>= 1.0.10, development)", "daemons (<= 1.1.6, ~> 1.1.4)", "faker (~> 0.9, development)", "i18n (>= 0.5.0)", "rake (!= 0.9.0, development)", "rr (~> 1.0, development)", "rspec-core (~> 2.0, development)", "rspec-expectations (~> 2.0, development)", "state_machine (~> 1.1.0)", "yard (~> 0.7, development)"]]
+bson => ["1.9.2"]
+bson_ext => ["1.9.1", ["bson (~> 1.9.1)"]]
+builder => ["3.0.4"]
+bundler => ["1.3.4", ["ronn (~> 0.7.3, development)", "rspec (~> 2.11, development)"]]
+cancan => ["1.6.10", ["rails (~> 3.0.9, development)", "rr (~> 0.10.11, development)", "rspec (~> 2.6.0, development)", "supermodel (~> 0.1.4, development)"]]
+capistrano => ["2.15.5", ["highline (>= 0)", "mocha (= 0.9.12, development)", "net-scp (>= 1.0.0)", "net-sftp (>= 2.0.0)", "net-ssh (>= 2.0.14)", "net-ssh-gateway (>= 1.1.0)"]]
+capybara => ["2.1.0", ["cucumber (>= 0.10.5, development)", "fuubar (>= 0.0.1, development)", "launchy (>= 2.0.4, development)", "mime-types (>= 1.16)", "nokogiri (>= 1.3.3)", "pry (>= 0, development)", "rack (>= 1.0.0)", "rack-test (>= 0.5.4)", "rake (>= 0, development)", "rspec (>= 2.2.0, development)", "selenium-webdriver (~> 2.0, development)", "sinatra (>= 0.9.4, development)", "xpath (~> 2.0)", "yard (>= 0.5.8, development)"]]
+carrierwave => ["0.9.0", ["activemodel (>= 3.2.0)", "activesupport (>= 3.2.0)", "cucumber (~> 1.3.2, development)", "fog (>= 1.3.1, development)", "json (>= 1.7)", "mini_magick (>= 3.6.0, development)", "mysql2 (>= 0, development)", "rails (>= 3.2.0, development)", "rmagick (>= 0, development)", "rspec (~> 2.13.0, development)", "sham_rack (>= 0, development)", "timecop (>= 0, development)"]]
+carrierwave-mongoid => ["0.6.1", ["carrierwave (< 0.10.0, >= 0.8.0)", "mini_magick (>= 0, development)", "mongoid (< 5.0, >= 3.0)", "mongoid-grid_fs (~> 1.3)", "pry (>= 0, development)", "rake (~> 10.0, development)", "rspec (~> 2.14, development)"]]
+cells => ["3.8.8", ["actionpack (>= 3.0)", "haml (>= 0, development)", "minitest (>= 2.8.1, development)", "railties (>= 3.0)", "rake (>= 0, development)", "simple_form (>= 0, development)", "slim (>= 0, development)", "tzinfo (>= 0, development)"]]
+celluloid => ["0.15.2", ["benchmark_suite (>= 0, development)", "guard-rspec (>= 0, development)", "rake (>= 0, development)", "rspec (>= 0, development)", "timers (~> 1.1.0)"]]
+childprocess => ["0.3.9", ["ffi (>= 1.0.11, ~> 1.0)", "rake (~> 0.9.2, development)", "rspec (>= 2.0.0, development)", "yard (>= 0, development)"]]
+chinese_pinyin => ["0.5.0"]
+client_side_validations => ["3.2.5", ["coffee-script (>= 0, development)", "coveralls (>= 0, development)", "jquery-rails (>= 0, development)", "json (>= 0, development)", "m (>= 0, development)", "mocha (>= 0, development)", "rails (~> 3.2.0, development)", "shotgun (>= 0, development)", "sinatra (~> 1.0, development)", "sqlite3 (>= 0, development)", "thin (>= 0, development)"]]
+client_side_validations-simple_form => ["2.1.0", ["client_side_validations (~> 3.2.5)", "coffee-script (>= 0, development)", "json (>= 0, development)", "m (>= 0, development)", "mocha (>= 0, development)", "rails (~> 3.2.0, development)", "shotgun (>= 0, development)", "simple_form (~> 2.1.0)", "sinatra (~> 1.0, development)", "thin (>= 0, development)"]]
+coderay => ["1.0.9"]
+coercible => ["0.2.0", ["backports (>= 3.1.0, ~> 3.0)", "descendants_tracker (~> 0.0.1)"]]
+coffee-rails => ["3.2.2", ["coffee-script (>= 2.2.0)", "railties (~> 3.2.0)"]]
+coffee-script => ["2.2.0", ["coffee-script-source (>= 0)", "execjs (>= 0)"]]
+coffee-script-source => ["1.6.3"]
+crack => ["0.4.1", ["safe_yaml (~> 0.9.0)"]]
+daemons => ["1.1.6"]
+database_cleaner => ["1.0.1"]
+descendants_tracker => ["0.0.3", ["rake (~> 10.1.0, development)", "rspec (~> 2.13.0, development)", "yard (~> 0.8.6.1, development)"]]
+diff-lcs => ["1.2.4", ["hoe (~> 3.6, development)", "hoe-bundler (~> 1.2, development)", "hoe-doofus (~> 1.0, development)", "hoe-gemspec2 (~> 1.1, development)", "hoe-git (~> 1.5, development)", "hoe-rubygems (~> 1.0, development)", "hoe-travis (~> 1.2, development)", "rake (~> 10.0, development)", "rdoc (~> 4.0, development)", "rspec (~> 2.0, development)", "rubyforge (>= 2.0.4, development)"]]
+domain_name => ["0.5.15", ["bundler (>= 1.2.0, development)", "rake (>= 0.9.2.2, development)", "rdoc (>= 2.4.2, development)", "shoulda (>= 0, development)", "unf (< 1.0.0, >= 0.0.5)"]]
+email-spy => ["0.0.5", ["gdata_19 (~> 1.1.5)", "httpclient (~> 2.2.5)", "mechanize (~> 2.5.1)", "nokogiri (~> 1.6.0)", "rspec (~> 2.11.0, development)"]]
+equalizer => ["0.0.7", ["bundler (>= 1.3.5, ~> 1.3, development)"]]
+erubis => ["2.7.0"]
+eventmachine => ["1.0.3", ["bluecloth (>= 0, development)", "rake-compiler (~> 0.8.3, development)", "yard (>= 0.8.5.2, development)"]]
+execjs => ["2.0.2", ["rake (>= 0, development)"]]
+factory_girl => ["4.2.0", ["activesupport (>= 3.0.0)", "appraisal (~> 0.5.1, development)", "aruba (>= 0, development)", "bourne (>= 0, development)", "cucumber (~> 1.2.1, development)", "mocha (>= 0.12.8, development)", "rspec (~> 2.12.0, development)", "simplecov (>= 0, development)", "sqlite3 (>= 0, development)", "timecop (>= 0, development)", "yard (>= 0, development)"]]
+factory_girl_rails => ["4.2.1", ["appraisal (~> 0.5.0, development)", "aruba (~> 0.5.1, development)", "cucumber (~> 1.2.1, development)", "factory_girl (~> 4.2.0)", "railties (>= 3.0.0)", "rake (>= 0, development)", "rspec (~> 2.11.0, development)"]]
+faraday => ["0.8.8", ["multipart-post (~> 1.2.0)", "rake (>= 0, development)", "simplecov (>= 0, development)"]]
+ffi => ["1.9.0", ["rake (>= 0, development)", "rake-compiler (>= 0.6.0, development)", "rspec (>= 0, development)", "rubygems-tasks (>= 0, development)"]]
+formatador => ["0.2.4", ["rake (>= 0, development)", "shindo (>= 0, development)"]]
+formtastic => ["2.2.1", ["BlueCloth (>= 0, development)", "actionpack (>= 3.0)", "ammeter (~> 0.2.5, development)", "appraisal (>= 0, development)", "colored (>= 0, development)", "hpricot (~> 0.8.3, development)", "rake (>= 0, development)", "rcov (~> 0.9.9, development)", "rspec-rails (~> 2.8.0, development)", "rspec_tag_matchers (>= 1.0.0, development)", "tzinfo (>= 0, development)", "yard (~> 0.6, development)"]]
+friendly_id => ["4.0.10.1", ["activerecord (< 4.0, >= 3.0)", "ffaker (>= 0, development)", "globalize3 (>= 0, development)", "i18n (>= 0, development)", "maruku (>= 0, development)", "minitest (~> 4.4.0, development)", "mocha (~> 0.13.1, development)", "railties (< 4.0, >= 3.0, development)", "simplecov (>= 0, development)", "yard (>= 0, development)"]]
+galetahub-simple_captcha => ["0.1.5"]
+gdata_19 => ["1.1.5"]
+git => ["1.2.6", ["rake (>= 0, development)", "rdoc (>= 0, development)", "test-unit (>= 0, development)"]]
+grape => ["0.6.1", ["activesupport (>= 0)", "builder (>= 0)", "bundler (>= 0, development)", "grape-entity (>= 0.2.0, development)", "hashie (>= 1.2.0)", "maruku (>= 0, development)", "multi_json (>= 1.3.2)", "multi_xml (>= 0.5.2)", "rack (>= 1.3.0)", "rack-accept (>= 0)", "rack-mount (>= 0)", "rack-test (>= 0, development)", "rake (>= 0, development)", "rspec (~> 2.9, development)", "virtus (>= 1.0.0)", "yard (>= 0, development)"]]
+grape-entity => ["0.3.0", ["activesupport (>= 0)", "bundler (>= 0, development)", "maruku (>= 0, development)", "multi_json (>= 1.3.2)", "rake (>= 0, development)", "rspec (~> 2.9, development)", "yard (>= 0, development)"]]
+grape-swagger => ["0.6.0", ["bundler (> 1.0.0, development)", "grape (>= 0.2.0)", "jeweler (~> 1.8.4, development)", "kramdown (>= 0)", "pry (>= 0, development)", "rack-test (>= 0, development)", "rdoc (~> 3.12, development)", "rspec (>= 0, development)", "shoulda (>= 0, development)"]]
+guard => ["2.2.3", ["bundler (>= 0, development)", "formatador (>= 0.2.4)", "listen (~> 2.1)", "lumberjack (~> 1.0)", "pry (>= 0.9.12)", "rspec (~> 2.14, development)", "thor (>= 0.18.1)"]]
+guard-rspec => ["4.0.3", ["bundler (>= 1.3.5, development)", "guard (>= 2.1.1)", "launchy (>= 0, development)", "rake (>= 0, development)", "rspec (>= 0, development)", "rspec (~> 2.14)"]]
+guard-spork => ["1.5.1", ["bundler (~> 1.0, development)", "childprocess (>= 0.2.3)", "guard (>= 1.1)", "guard-rspec (~> 1.0, development)", "rspec (~> 2.10, development)", "spork (>= 0.8.4)"]]
+hashie => ["2.0.5", ["growl (>= 0, development)", "guard (>= 0, development)", "guard-rspec (>= 0, development)", "rake (~> 0.9.2, development)", "rspec (~> 2.5, development)"]]
+hashr => ["0.0.22", ["rake (>= 0, development)", "test_declarative (>= 0.0.2, development)"]]
+highline => ["1.6.20"]
+hike => ["1.2.3", ["rake (>= 0, development)"]]
+hpricot => ["0.8.6"]
+httparty => ["0.12.0", ["json (~> 1.8)", "multi_xml (>= 0.5.2)"]]
+httpclient => ["2.2.7"]
+i18n => ["0.6.5", ["activesupport (>= 3.0.0, development)", "mocha (>= 0, development)", "sqlite3 (>= 0, development)", "test_declarative (>= 0, development)"]]
+ice_nine => ["0.10.0", ["bundler (>= 1.3.5, ~> 1.3, development)"]]
+jeweler => ["1.8.4", ["bluecloth (>= 0, development)", "bundler (~> 1.0)", "cucumber (~> 1.1.4, development)", "git (>= 1.2.5)", "rake (>= 0)", "rcov (>= 0, development)", "rdoc (>= 0, development)", "rdoc (>= 0)", "yard (~> 0.7.4, development)"]]
+journey => ["1.0.4", ["hoe (~> 2.13, development)", "json (>= 0, development)", "minitest (~> 2.11, development)", "racc (>= 1.4.6, development)", "rdoc (~> 3.10, development)", "rdoc (~> 3.11, development)"]]
+jquery-rails => ["2.0.2", ["railties (< 5.0, >= 3.2.0)", "thor (~> 0.14)"]]
+json => ["1.8.0", ["permutation (>= 0, development)", "sdoc (~> 0.3.16, development)\n\nGem json_pure-1.8.0", "permutation (>= 0, development)", "rake (~> 0.9.2, development)", "sdoc (~> 0.3.16, development)"]]
+kgio => ["2.8.0"]
+kramdown => ["1.2.0", ["coderay (~> 1.0.0, development)", "stringex (~> 1.5.1, development)"]]
+libnotify => ["0.8.2", ["ffi (>= 1.0.11)", "minitest (~> 4.7.4, development)", "minitest-libnotify (~> 0.2.2, development)", "simplecov (>= 0, development)", "yard (~> 0.8.6.1, development)"]]
+listen => ["2.2.0", ["bundler (>= 1.3.5, development)", "celluloid (>= 0.15.2)", "rake (>= 0, development)", "rb-fsevent (>= 0.9.3)", "rb-inotify (>= 0.9)", "rspec (>= 0, development)", "rspec-retry (>= 0, development)"]]
+lumberjack => ["1.0.4"]
+macaddr => ["1.6.1", ["systemu (~> 2.5.0)"]]
+mail => ["2.5.4", ["bundler (>= 1.0.3, development)", "mime-types (~> 1.16)", "rake (> 0.8.7, development)", "rdoc (>= 0, development)", "rspec (~> 2.12.0, development)", "treetop (~> 1.4.8)"]]
+mechanize => ["2.5.1", ["domain_name (>= 0.5.1, ~> 0.5)", "hoe (~> 3.0, development)", "mime-types (>= 1.17.2, ~> 1.17)", "minitest (~> 2.11, development)", "net-http-digest_auth (>= 1.1.1, ~> 1.1)", "net-http-persistent (>= 2.5.2, ~> 2.5)", "nokogiri (~> 1.4)", "ntlm-http (>= 0.1.1, ~> 0.1)", "rdoc (~> 3.10, development)", "webrobots (>= 0.0.9, ~> 0.0)"]]
+method_source => ["0.8.2", ["bacon (~> 1.1.0, development)", "rake (~> 0.9, development)"]]
+mime-types => ["1.25", ["hoe (~> 3.7, development)", "hoe-bundler (~> 1.2, development)", "hoe-doofus (~> 1.0, development)", "hoe-gemspec2 (~> 1.1, development)", "hoe-git (~> 1.5, development)", "hoe-rubygems (~> 1.0, development)", "hoe-travis (~> 1.2, development)", "minitest (~> 5.0, development)", "rake (~> 10.0, development)", "rdoc (~> 4.0, development)", "rubyforge (>= 2.0.4, development)"]]
+mini_magick => ["3.5.0", ["rake (>= 0, development)", "subexec (~> 0.2.1)", "test-unit (>= 0, development)"]]
+mini_portile => ["0.5.2"]
+mongo => ["1.9.1", ["bson (~> 1.9.1)"]]
+mongoid => ["3.1.4", ["activemodel (~> 3.2)", "moped (~> 1.4)", "origin (~> 1.0)", "tzinfo (~> 0.3.22)"]]
+mongoid-grid_fs => ["1.9.0", ["mime-types (~> 1.19)", "mongoid (~> 3.0)"]]
+mono_logger => ["1.1.0", ["bundler (~> 1.3, development)", "minitest (~> 4.0, development)", "rake (>= 0, development)"]]
+moped => ["1.5.1"]
+multi_json => ["1.7.4", ["bundler (~> 1.0, development)"]]
+multi_xml => ["0.5.5", ["bundler (~> 1.0, development)"]]
+multipart-post => ["1.2.0"]
+mysql2 => ["0.3.13", ["eventmachine (>= 0, development)", "rake (~> 0.9.3, development)", "rake-compiler (~> 0.8.1, development)", "rspec (~> 2.8.0, development)"]]
+net-http-digest_auth => ["1.4", ["hoe (~> 3.6, development)", "minitest (~> 5.0, development)", "rdoc (~> 4.0, development)"]]
+net-http-persistent => ["2.9", ["hoe (~> 3.6, development)", "minitest (~> 5.0, development)", "rdoc (~> 4.0, development)"]]
+net-scp => ["1.1.2", ["mocha (>= 0, development)", "net-ssh (>= 2.6.5)", "test-unit (>= 0, development)"]]
+net-sftp => ["2.1.2", ["mocha (>= 0, development)", "net-ssh (>= 2.6.5)", "test-unit (>= 0, development)"]]
+net-ssh => ["2.7.0", ["mocha (>= 0, development)", "test-unit (>= 0, development)"]]
+net-ssh-gateway => ["1.2.0", ["mocha (>= 0, development)", "net-ssh (>= 2.6.5)", "test-unit (>= 0, development)"]]
+newrelic-grape => ["1.3.1", ["grape (>= 0)", "newrelic_rpm (>= 0)"]]
+newrelic_moped => ["0.0.6", ["moped (>= 0)", "newrelic_rpm (~> 3.6.0)", "rake (>= 0, development)"]]
+newrelic_rpm => ["3.6.6.147", ["minitest (~> 4.7.5, development)", "mocha (~> 0.13.0, development)", "rails (~> 3.2.13, development)", "rake (= 10.1.0, development)", "rdoc (>= 2.4.2, development)", "sdoc-helpers (>= 0, development)", "sequel (~> 3.46.0, development)", "sqlite3 (>= 0, development)"]]
+nokogiri => ["1.6.0", ["hoe (~> 2.16, development)", "hoe-bundler (>= 1.1, development)", "hoe-debugging (>= 1.0.3, development)", "hoe-gemspec (>= 1.0, development)", "hoe-git (>= 1.4, development)", "mini_portile (~> 0.5.0)", "minitest (~> 2.2.2, development)", "racc (>= 1.4.6, development)", "rake (>= 0.9, development)", "rake-compiler (~> 0.8.0, development)", "rdoc (~> 3.10, development)", "rexical (>= 1.0.5, development)"]]
+ntlm-http => ["0.1.1"]
+oauth => ["0.4.7", ["actionpack (>= 2.3.5, development)", "curb (>= 0.6.6.0, development)", "em-http-request (>= 0.2.10, development)", "jeweler (>= 0, development)", "mocha (>= 0.9.8, development)", "rack (>= 1.0.0, development)", "rake (>= 0, development)", "typhoeus (>= 0.1.13, development)"]]
+oauth2 => ["0.5.2", ["faraday (~> 0.7)", "multi_json (~> 1.0)", "multi_xml (>= 0, development)", "rake (>= 0, development)", "rdoc (>= 0, development)", "rspec (>= 0, development)", "simplecov (>= 0, development)", "yard (>= 0, development)"]]
+omniauth => ["1.1.4", ["bundler (~> 1.0, development)", "hashie (< 3, >= 1.2)", "rack (>= 0)"]]
+omniauth-oauth2 => ["1.0.0", ["oauth2 (~> 0.5.0)", "omniauth (~> 1.0)", "rack-test (>= 0, development)", "rspec (~> 2.7, development)", "simplecov (>= 0, development)", "webmock (>= 0, development)"]]
+omniauth-weibo-oauth2 => ["0.3.0", ["omniauth (~> 1.0)", "omniauth-oauth2 (~> 1.0)"]]
+origin => ["1.1.0"]
+piet => ["0.1.3", ["ZenTest (>= 0, development)", "png_quantizator (>= 0)", "rspec (>= 0, development)"]]
+png_quantizator => ["0.1.0", ["rspec (>= 0, development)"]]
+polyglot => ["0.3.3"]
+pry => ["0.9.12.2", ["bacon (~> 1.2, development)", "bond (~> 0.4.2, development)", "coderay (~> 1.0.5)", "guard (~> 1.3.2, development)", "method_source (~> 0.8)", "mocha (~> 0.13.1, development)", "open4 (~> 1.3, development)", "rake (~> 0.9, development)", "slop (~> 3.4)"]]
+pry-nav => ["0.2.3", ["pry (~> 0.9.10)", "pry-remote (~> 0.1.6, development)"]]
+quiet_assets => ["1.0.2", ["railties (< 5.0, >= 3.1)", "rake (>= 0, development)", "tzinfo (>= 0, development)"]]
+rack => ["1.4.5", ["bacon (>= 0, development)", "memcache-client (>= 0, development)", "mongrel (>= 1.2.0.pre2, development)", "rake (>= 0, development)", "ruby-fcgi (>= 0, development)", "thin (>= 0, development)"]]
+rack-accept => ["0.4.5", ["rack (>= 0.4)", "rake (>= 0, development)"]]
+rack-cache => ["1.2", ["bacon (>= 0, development)", "dalli (>= 0, development)", "memcached (>= 0, development)", "rack (>= 0.4)"]]
+rack-mount => ["0.8.3", ["racc (>= 0, development)", "rack (>= 1.0.0)", "rake (>= 0, development)", "rexical (>= 0, development)"]]
+rack-protection => ["1.5.1", ["rack (>= 0)", "rack-test (>= 0, development)", "rspec (~> 2.0, development)"]]
+rack-ssl => ["1.3.3", ["rack (>= 0)"]]
+rack-test => ["0.6.2", ["rack (>= 1.0)"]]
+rails => ["3.2.15", ["actionmailer (= 3.2.15)", "actionpack (= 3.2.15)", "activerecord (= 3.2.15)", "activeresource (= 3.2.15)", "activesupport (= 3.2.15)", "bundler (~> 1.0)", "railties (= 3.2.15)"]]
+rails3-generators => ["1.0.0", ["bundler (>= 1.0.0, development)", "factory_girl (>= 0, development)", "rails (>= 3.0.0, development)", "railties (>= 3.0.0)", "rake (>= 0, development)", "test-unit (>= 0, development)"]]
+rails_autolink => ["1.1.0", ["rails (> 3.1)"]]
+railties => ["3.2.15", ["actionpack (= 3.2.15)", "activesupport (= 3.2.15)", "rack-ssl (~> 1.3.2)", "rake (>= 0.8.7)", "rdoc (~> 3.4)", "thor (< 2.0, >= 0.14.6)"]]
+raindrops => ["0.11.0", ["aggregate (~> 0.2, development)", "io-extra (>= 1.2.3, ~> 1.2, development)", "posix_mq (~> 2.0, development)", "rack (~> 1.2, development)", "unicorn (>= 0.98, development)"]]
+rake => ["10.1.0", ["minitest (~> 2.1, development)"]]
+rb-fsevent => ["0.9.3", ["bundler (~> 1.0, development)", "guard-rspec (~> 1.2, development)", "rspec (~> 2.11, development)"]]
+rb-inotify => ["0.9.2", ["ffi (>= 0.5.0)", "yard (>= 0.4.0, development)"]]
+rdoc => ["3.12.2", ["ZenTest (~> 4, development)", "hoe (~> 3.5, development)", "json (~> 1.4)", "minitest (~> 4.3, development)", "racc (~> 1.4, development)", "rdoc (~> 3.10, development)"]]
+redis => ["3.0.4", ["rake (>= 0, development)"]]
+redis-activesupport => ["3.2.3", ["activesupport (~> 3.2.3)", "bundler (~> 1.1.rc, development)", "minitest (~> 2.8.0, development)", "mocha (~> 0.10.0, development)", "purdytest (~> 1.0.0, development)", "rake (~> 0.9.2.2, development)", "redis-store (~> 1.1.0)"]]
+redis-namespace => ["1.3.0", ["rake (>= 0, development)", "redis (~> 3.0.0)", "rspec (>= 0, development)"]]
+redis-objects => ["0.7.0", ["bacon (>= 0, development)", "redis (>= 3.0.2)", "redis-namespace (>= 1.2.0, development)"]]
+redis-store => ["1.1.3", ["bundler (~> 1.1, development)", "git (~> 1.2.5, development)", "minitest (~> 2.8.0, development)", "mocha (~> 0.10.0, development)", "purdytest (~> 1.0.0, development)", "rake (~> 0.9.2, development)", "redis (>= 2.2.0)"]]
+require_relative => ["1.0.3", ["minitest (>= 0, development)", "rocco (>= 0, development)"]]
+resque => ["1.24.1", ["mono_logger (~> 1.0)", "multi_json (~> 1.0)", "redis-namespace (~> 1.2)", "sinatra (>= 0.9.2)", "vegas (~> 0.1.2)"]]
+resque-dynamic-queues => ["0.8.1", ["json (>= 0, development)", "rack-test (~> 0.5.4, development)", "rake (>= 0, development)", "resque (~> 1.10)", "rspec (~> 2.5, development)"]]
+resque-scheduler => ["2.0.1", ["bundler (>= 1.0.0, development)", "redis (>= 2.0.1)", "resque (>= 1.20.0)", "rufus-scheduler (>= 0)"]]
+resque_mailer => ["2.2.4", ["actionmailer (>= 3.0)", "rspec (~> 2.6, development)", "yard (>= 0.6.0, development)"]]
+rest-client => ["1.6.7", ["mime-types (>= 1.16)", "rspec (>= 0, development)", "webmock (>= 0.9.1, development)"]]
+roo => ["1.12.2", ["google_drive (>= 0, development)", "jeweler (>= 0, development)", "nokogiri (>= 0)", "rubyzip (>= 0)", "spreadsheet (> 0.6.4)"]]
+rspec => ["2.14.1", ["rspec-core (~> 2.14.0)", "rspec-expectations (~> 2.14.0)", "rspec-mocks (~> 2.14.0)"]]
+rspec-core => ["2.14.7", ["ZenTest (~> 4.6, development)", "aruba (~> 0.5, development)", "cucumber (~> 1.1.9, development)", "flexmock (~> 0.9.0, development)", "mocha (~> 0.13.0, development)", "nokogiri (= 1.5.2, development)", "rake (~> 10.0.0, development)", "rr (~> 1.0.4, development)", "syntax (= 1.0.0, development)"]]
+rspec-expectations => ["2.14.3", ["aruba (~> 0.5, development)", "cucumber (~> 1.1.9, development)", "diff-lcs (< 2.0, >= 1.1.3)", "rake (~> 10.0.0, development)"]]
+rspec-mocks => ["2.14.4", ["aruba (~> 0.5, development)", "cucumber (~> 1.1.9, development)", "rake (~> 10.0.0, development)"]]
+rspec-rails => ["2.14.0", ["ZenTest (= 4.9.0, development)", "actionpack (>= 3.0)", "activesupport (>= 3.0)", "ammeter (= 0.2.5, development)", "aruba (~> 0.4.11, development)", "capybara (>= 2.0.0, development)", "cucumber (~> 1.1.9, development)", "railties (>= 3.0)", "rake (~> 10.0.0, development)", "rspec-core (~> 2.14.0)", "rspec-expectations (~> 2.14.0)", "rspec-mocks (~> 2.14.0)"]]
+ruby-ole => ["1.2.11.7"]
+rubycas-client => ["2.3.9", ["actionpack (>= 0, development)", "activerecord (>= 0, development)", "activerecord-jdbcsqlite3-adapter (>= 0, development)", "activesupport (>= 0)", "bundler (>= 1.0, development)", "database_cleaner (>= 0, development)", "guard (>= 0, development)", "guard-rspec (>= 0, development)", "jeweler (>= 0, development)", "jruby-openssl (>= 0, development)", "json (>= 0, development)", "rake (>= 0, development)", "rspec (>= 0, development)", "simplecov (>= 0, development)", "sqlite3 (>= 0, development)"]]
+rubyzip => ["0.9.9"]
+rufus-scheduler => ["2.0.24", ["rake (>= 0, development)", "rspec (>= 2.7.0, development)", "tzinfo (>= 0.3.22)"]]
+safe_yaml => ["0.9.7"]
+sass => ["3.2.12", ["maruku (>= 0.5.9, development)", "yard (>= 0.5.3, development)"]]
+sass-rails => ["3.2.6", ["railties (~> 3.2.0)", "sass (>= 3.1.10)", "tilt (~> 1.3)"]]
+showbuilder => ["0.0.15"]
+simple_form => ["2.1.0", ["actionpack (~> 3.0)", "activemodel (~> 3.0)"]]
+sinatra => ["1.4.4", ["rack (~> 1.4)", "rack-protection (~> 1.4)", "tilt (>= 1.3.4, ~> 1.3)"]]
+sitemap_generator => ["4.1.1", ["builder (>= 0)", "mocha (>= 0, development)", "nokogiri (>= 0, development)", "rspec (>= 0, development)"]]
+slim => ["2.0.1", ["temple (~> 0.6.6)", "tilt (< 2.1, >= 1.3.3)"]]
+slop => ["3.4.6", ["minitest (~> 5.0.0, development)", "rake (>= 0, development)"]]
+spork => ["1.0.0rc3"]
+spreadsheet => ["0.9.1", ["hoe (~> 2.13, development)", "rdoc (~> 3.10, development)", "ruby-ole (>= 1.0)"]]
+sprockets => ["2.2.2", ["coffee-script (~> 2.0, development)", "coffee-script-source (~> 1.2.0, development)", "eco (~> 1.0, development)", "ejs (~> 1.0, development)", "execjs (~> 1.0, development)", "hike (~> 1.2)", "json (>= 0, development)", "multi_json (~> 1.0)", "rack (~> 1.0)", "rack-test (>= 0, development)", "rake (>= 0, development)", "tilt (!= 1.3.0, ~> 1.1)"]]
+sqlite3 => ["1.3.7", ["hoe (~> 3.4, development)", "mini_portile (~> 0.2.2, development)", "rake-compiler (~> 0.8.2, development)", "rdoc (~> 3.10, development)"]]
+state_machine => ["1.1.2", ["appraisal (~> 0.4.0, development)", "rake (>= 0, development)", "rcov (>= 0, development)"]]
+strip_attributes => ["1.4.4", ["active_attr (~> 0.7, development)", "activemodel (< 5.0, >= 3.0)", "minitest (~> 4.7, development)", "minitest-matchers (~> 1.2, development)", "rake (~> 10.0, development)"]]
+subexec => ["0.2.3", ["rake (>= 0, development)", "rspec (~> 2.7.0, development)"]]
+systemu => ["2.5.2"]
+temple => ["0.6.7", ["bacon (>= 0, development)", "rake (>= 0, development)", "tilt (>= 0, development)"]]
+thor => ["0.18.1", ["bundler (~> 1.0, development)"]]
+tilt => ["1.4.1", ["RedCloth (>= 0, development)", "asciidoctor (>= 0.1.0, development)", "bluecloth (>= 0, development)", "builder (>= 0, development)", "coffee-script (>= 0, development)", "contest (>= 0, development)", "creole (>= 0, development)", "erubis (>= 0, development)", "haml (>= 2.2.11, development)", "kramdown (>= 0, development)", "less (>= 0, development)", "liquid (>= 0, development)", "markaby (>= 0, development)", "maruku (>= 0, development)", "nokogiri (>= 0, development)", "radius (>= 0, development)", "rdiscount (>= 0, development)", "rdoc (>= 0, development)", "rdoc (>= 0, development)", "redcarpet (>= 0, development)", "sass (>= 0, development)", "wikicloth (>= 0, development)", "yajl-ruby (>= 0, development)"]]
+timers => ["1.1.0", ["rake (>= 0, development)", "rspec (>= 0, development)"]]
+tire => ["0.6.0", ["active_model_serializers (>= 0, development)", "activemodel (>= 3.0)", "activerecord (>= 3.0, development)", "activesupport (>= 0)", "ansi (>= 0)", "bson_ext (>= 0, development)", "bundler (~> 1.0, development)", "curb (>= 0, development)", "faraday (>= 0, development)", "hashr (~> 0.0.19)", "minitest (~> 2.12, development)", "mocha (~> 0.13, development)", "mongoid (~> 2.2, development)", "multi_json (~> 1.3)", "oj (>= 0, development)", "rake (>= 0)", "redis-persistence (>= 0, development)", "rest-client (~> 1.6)", "shoulda-context (>= 0, development)", "sqlite3 (>= 0, development)", "turn (~> 0.9, development)", "yajl-ruby (~> 1.0, development)"]]
+treetop => ["1.4.15", ["activesupport (>= 0, development)", "i18n (~> 0.5.0, development)", "jeweler (>= 0, development)", "polyglot (>= 0)", "polyglot (>= 0.3.1)", "rake (>= 0, development)", "rr (~> 1.0, development)", "rspec (>= 2.0.0, development)"]]
+turbo-sprockets-rails3 => ["0.3.6", ["railties (< 4.0.0, > 3.2.8)", "sprockets (>= 2.0.0)"]]
+typhoeus => ["0.3.3", ["diff-lcs (>= 0, development)", "json (>= 0, development)", "mime-types (>= 0)", "rake (>= 0, development)", "rspec (~> 2.6, development)", "sinatra (>= 0, development)"]]
+tzinfo => ["0.3.38"]
+uglifier => ["2.1.2", ["bundler (~> 1.0, development)", "execjs (>= 0.3.0)", "jeweler (~> 1.8.3, development)", "multi_json (>= 1.0.2, ~> 1.0)", "rdoc (>= 3.11, development)", "rspec (~> 2.7, development)", "source_map (>= 0, development)"]]
+unf => ["0.1.3", ["bundler (>= 1.2.0, development)", "rake (>= 0.9.2.2, development)", "rdoc (> 2.4.2, development)", "shoulda (>= 0, development)", "unf_ext (>= 0)"]]
+unf_ext => ["0.0.6", ["bundler (>= 1.2, development)", "rake-compiler (>= 0.7.9, development)", "rdoc (> 2.4.2, development)", "shoulda (>= 0, development)"]]
+unicorn => ["4.6.3", ["isolate (~> 3.2, development)", "kgio (~> 2.6)", "rack (>= 0)", "raindrops (~> 0.7)", "wrongdoc (~> 1.6.1, development)"]]
+uuid => ["2.3.7", ["macaddr (~> 1.0)"]]
+vegas => ["0.1.11", ["bacon (~> 1.1.0, development)", "mocha (~> 0.9.8, development)", "rack (>= 1.0.0)", "sinatra (~> 0.9.4, development)"]]
+virtus => ["1.0.0", ["axiom-types (~> 0.0.5)", "coercible (~> 0.2)", "descendants_tracker (~> 0.0.1)", "equalizer (~> 0.0.7)"]]
+webrobots => ["0.1.1", ["bundler (>= 1.2, development)", "nokogiri (>= 1.4.4, development)", "racc (>= 0, development)", "rake (>= 0.9.2.2, development)", "rdoc (> 2.4.2, development)", "shoulda (>= 0, development)"]]
+weibo => ["0.0.14", ["crack (>= 0)", "hashie (>= 0)", "hashie (>= 0)", "httparty (>= 0)", "httparty (>= 0.5.2)", "jeweler (>= 0)", "oauth (~> 0.4.1)", "oauth (>= 0)", "thoughtbot-shoulda (>= 0, development)"]]
+weibo2 => ["0.1.0", ["oauth2 (~> 0.5.1)", "rspec-rails (>= 0, development)"]]
+weibo2_plugins => ["0.0.6", ["mocha (>= 0, development)", "oauth2 (~> 0.5.1)", "rspec (~> 2.3, development)", "typhoeus (= 0.3.3)", "weibo2 (~> 0.1.0)", "yard (~> 0.6.0, development)"]]
+wice_grid => ["3.0.4", ["will_paginate (>= 3.0.pre2, development)"]]
+will_paginate => ["3.0.4"]
+will_paginate_mongoid => ["1.1.0", ["mongoid (>= 2.4)", "will_paginate (~> 3.0)"]]
+xpath => ["2.0.0", ["nokogiri (~> 1.3)", "rake (>= 0, development)", "rspec (~> 2.0, development)", "yard (>= 0.5.8, development)"]]
+yajl-ruby => ["1.1.0", ["activesupport (>= 0, development)", "json (>= 0, development)", "rake-compiler (>= 0.7.5, development)", "rspec (>= 2.0.0, development)"]]
+

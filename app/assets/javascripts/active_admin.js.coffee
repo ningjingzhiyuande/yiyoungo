@@ -1,5 +1,6 @@
 #= require active_admin/base
 //= require_tree ./lib
+//= require_tree ./admin
+//= require redactor-rails
 
-jQuery ->
-  $('#redactor_content').redactor({ imageUpload: '/admin/ajax/image_upload' });
+

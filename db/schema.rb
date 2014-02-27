@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219054452) do
+ActiveRecord::Schema.define(version: 20140226174346) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -56,6 +56,48 @@ ActiveRecord::Schema.define(version: 20140219054452) do
 
   add_index "contents", ["resource_type", "resource_id"], name: "index_contents_on_resource_type_and_resource_id", using: :btree
 
+  create_table "events", force: true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.integer  "view_count"
+    t.integer  "city"
+    t.string   "expense"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.boolean  "is_recommend"
+    t.string   "image"
+    t.integer  "participant_count"
+    t.string   "organization_name"
+    t.integer  "organize_id"
+    t.string   "organize_type"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jobs", force: true do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.integer  "industry"
+    t.integer  "function_code"
+    t.integer  "salary_start"
+    t.integer  "salary_end"
+    t.integer  "job_years"
+    t.integer  "job_num"
+    t.datetime "expired_at"
+    t.integer  "education"
+    t.integer  "view_count"
+    t.integer  "city"
+    t.integer  "job_kind"
+    t.boolean  "is_recommend"
+    t.string   "organization_name"
+    t.integer  "organize_id"
+    t.string   "organize_type"
+    t.integer  "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "news", force: true do |t|
     t.string   "title"
     t.integer  "user_id"
@@ -65,6 +107,23 @@ ActiveRecord::Schema.define(version: 20140219054452) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "redactor_assets", force: true do |t|
+    t.integer  "user_id"
+    t.string   "data_file_name",               null: false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "redactor_assets", ["assetable_type", "assetable_id"], name: "idx_redactor_assetable", using: :btree
+  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_redactor_assetable_type", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

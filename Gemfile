@@ -15,11 +15,15 @@ gem 'cancan'
 gem 'kaminari'
 gem 'draper'
 gem 'carrierwave'
+gem 'formtastic'
 #gem 'client_side_validations'
-gem 'simple_form'
+#gem 'client_side_validations-formtastic', github: 'elgalu/client_side_validations-formtastic', branch: 'patch-1'
+#gem 'simple_form'
 #gem 'meta_search', '>= 1.1.0.pre'
 gem 'backbone-on-rails'
 gem 'bson_ext'
+gem 'redactor-rails'
+gem 'mini_magick'
 #gem 'mongoid'
 gem 'activeadmin', github: 'gregbell/active_admin'
 
@@ -55,8 +59,10 @@ end
 # Use unicorn as the app server
 gem 'unicorn'
 
-# Use Capistrano for deployment
-gem 'capistrano'
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-rails',   '~> 1.1', require: false
+gem 'capistrano-bundler', '~> 1.1', require: false
+gem 'capistrano-rbenv', '~> 2.0', require: false
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]

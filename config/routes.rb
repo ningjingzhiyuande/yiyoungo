@@ -1,5 +1,11 @@
 NgoChina::Application.routes.draw do
 
+
+  resources :jobs
+
+  resources :events
+
+  mount RedactorRails::Engine => '/redactor_rails'
   devise_for :users, ActiveAdmin::Devise.config
   resources :news
 
@@ -18,7 +24,7 @@ NgoChina::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+   root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

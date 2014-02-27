@@ -1,0 +1,7 @@
+.news .news_label,.news .editor_class{margin-top:10px;width:900px;}
+.news .news_label label{width:100px;float:left;color: red;}
+.news .editor_class .label{width:100px;color: red;text-align: left}
+.news .editor_class .redactor_box{float:right;width:798px;height:400px}
+li.radio_class label{clear:both;padding-left:100px;}
+.clear {clear: both;padding: 0;margin: 0}
+#news_title{width:775px;}

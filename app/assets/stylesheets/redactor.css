@@ -2,9 +2,12 @@
 	position: relative;
 	border: 1px solid #ddd;
 	overflow: visible;
+
+
 }
 .redactor_box, .redactor_box textarea {
 	background-color: #fff;
+
 }
 
 body .redactor_air {

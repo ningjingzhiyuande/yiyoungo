@@ -1,4 +1,5 @@
 ActiveAdmin.register News do
+  #scope_to :current_user
   form :partial => "form"
   
   # See permitted parameters documentation:

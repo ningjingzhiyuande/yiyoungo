@@ -1,10 +1,12 @@
-<%= semantic_form_for [:admin, @news] do |f| %>
-    <%= f.input :title%>
+<%= semantic_form_for [:admin, @news],{:class=>"admin_news"} do |f| %>
+    <%= f.input :title,:label=>"标题", :required=>true,:wrapper_html=>{:class=>"news_label"}%>
     <%=f.semantic_fields_for :content, f.object.content || f.object.build_content do |field|%>
-      <%= field.input :body, :as => :text,:input_html=>{:id=>"redactor_content"}%>
+      <%= field.input :body, :as => :text,:input_html=>{:class=>"redactor"},:label=>"内容",wrapper_html: {:class=>"editor_class"}%>
     <%end%>
-     <%= f.input :is_recommend,as: :boolean%>
-     <%= f.input :image,as: :file%>
+    <div class="clear"></div>
+    <%= f.input :image,as: :file,:label=>"封面图片" ,:wrapper_html=>{:class=>"news_label"}%>
+     <%= f.input :is_recommend,as: :boolean,:label=>"是否推荐到首页",:wrapper_html=>{:class=>"radio_class news_label"}%>
+     
     <%= f.actions do %>
       <%= f.action :submit%>
       <%= f.action :cancel ,:wrapper_html => { :class => 'cancel'} %>
