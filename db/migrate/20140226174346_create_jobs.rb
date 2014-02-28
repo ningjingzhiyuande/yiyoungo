@@ -4,10 +4,10 @@ class CreateJobs < ActiveRecord::Migration
       t.string :title
       t.integer :user_id
       t.integer :industry
-      t.integer :function_code
-      t.integer :salary_start
-      t.integer :salary_end
-      t.integer :job_years
+      #t.integer :function_code
+      t.integer :salary
+     # t.integer :salary_end
+      t.integer :job_experience
       t.integer :job_num
       t.timestamp :expired_at
       t.integer :education

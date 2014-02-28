@@ -1,0 +1,44 @@
+<%=form_for [:admin, @job] do |f| %>
+    <div>
+     <ul>
+       <li><span>职位名称:</span><%= f.text_field :title , :size=>20,:required=>true%></li>
+       <li><span>职位类别:</span><%= f.select :job_kind ,  Job::JOB_KIND.collect{|k,v|[v,k]}%></li>
+
+       <li><span>工作地点:</span><div class="p-data-wrap" id="p-data-wrap_" style="z-index:4"></div></li>
+     <li><span>薪资水平:</span><%= f.select :salary ,  Job::SALARY.collect{|k,v|[v,k]}%></li>
+     <li><span>工作经验:</span><%= f.select :job_experience ,  Job::JOB_EXPERIENCE.collect{|k,v|[v,k]}%></li>
+
+      <li><span>职位描述与任职资格:</span><%= f.fields_for :content, f.object.content || f.object.build_content  do |c| %>
+      <%=c.text_area :body,:cols=>20%>
+
+        <%end%>
+      </li>
+
+      
+
+
+      
+    </ul>
+  <% end %>
+
+  	<script type="text/javascript">
+	$(function(){
+
+	var cityComData=[],cityDefault=[];
+	
+	cityComData = ["北京","天津","上海","重庆","石家庄","唐山"];
+	//cityDefault = ["石家庄","北京"];
+
+
+	$("#p-data-wrap_").msCityPlugin({
+			maxCount:3,		
+			check:'radio',
+			allDataMap:cityDataMap,
+			comData:cityComData,
+			init:cityDefault,
+			name:'cityCode_'
+	});
+
+})
+
+	</script>

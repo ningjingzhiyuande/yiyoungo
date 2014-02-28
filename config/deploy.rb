@@ -6,12 +6,13 @@ lock '3.1.0'
 set :application, "ngo-china"
 set :default_stage, "production"
 set :user, "www"
-set :deploy_to, "/home/www/apps/#{fetch(:application)}"
+set :deploy_to, "/home/#{fetch :user}/apps/#{fetch :application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
+set :pty,true
 
 set :scm, "git"
-set :repo_url, "git@github.com:shiguodong/dbscan.git"
+set :repo_url, "git@github.com:shiguodong/yiyoungo.git"
 set :branch, "master"
 set :keep_releases, 5
 
@@ -36,16 +37,16 @@ namespace :deploy do
 
   task :setup_config do
   	on roles(:app) do 
-    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
-    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
-    sudo "cd #{shared_path} && echo '2.0.0-rc1'>>.ruby-version"
-    sudo "cd #{shared_path} && echo 'ngo-china'>>.rbenv-gemsets"
-    run "mkdir -p #{shared_path}/config"
-    put File.read("config/database.yml"), "#{shared_path}/config/database.yml"
+    "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{fetch :application}"
+    "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{fetch :application}"
+    "cd #{shared_path} && echo '2.0.0-rc1'>>.ruby-version"
+    "cd #{shared_path} && echo 'ngo-china'>>.rbenv-gemsets"
+    "mkdir -p #{shared_path}/config"
+    puts File.read("config/database.yml"), "#{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
     end
   end
- # after :setup, "deploy:setup_config"
+  before "deploy:check", "deploy:setup_config"
 
   
 end
