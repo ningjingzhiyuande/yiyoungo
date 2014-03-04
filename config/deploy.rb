@@ -10,7 +10,7 @@ set :deploy_to, "/home/#{fetch :user}/apps/#{fetch :application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 set :pty,true
-#set :bundle_flags, "--deployment --quiet --binstubs --path"
+#set :bundle_flags, "--deployment --quiet"
 
 set :scm, "git"
 set :repo_url, "git@github.com:shiguodong/yiyoungo.git"
@@ -27,7 +27,7 @@ set :linked_files, %w{
   .ruby-version .rbenv-gemsets
 }
 
-set :linked_dirs, %w{tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
+set :linked_dirs, %w{public/system public/uploads}
 
 set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
 set :keep_releases, 5
