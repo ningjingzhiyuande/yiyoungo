@@ -61,7 +61,7 @@ set(:symlinks, [
   }
 ])
 
-
+SSHKit.config.command_map.prefix[:rake].push("bundle exec")
 
 namespace :deploy do
 	 
