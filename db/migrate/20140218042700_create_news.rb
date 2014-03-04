@@ -11,6 +11,6 @@ class CreateNews < ActiveRecord::Migration
       t.integer :status_id
       t.timestamps
     end
-    add_index :news, [:resource_type, :resource_id]
+    #add_index :news, [:resource_type, :resource_id]
   end
 end
