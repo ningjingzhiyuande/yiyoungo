@@ -17,3 +17,22 @@ $(".news").validate({
   }
 });
 })
+
+
+
+$(".form_job").validate({
+  rules: {
+    "job[title]":{
+      required: true,
+      minlength: 4
+    },
+    "job[content_attributes][body]":{
+      required: true,
+      minlength: 4
+    },
+    "job[city]":{
+    	 required: true
+    }
+  }
+});
+})

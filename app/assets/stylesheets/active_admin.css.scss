@@ -20,4 +20,19 @@
 @import "news";
 @import "msPickStyle";
 //@import "vender";
+@import "admin/jobs";
+//@import "medium-editor";
+//@import "themes/default";
+
+form input.text_int {
+    width:265px;
+}
+form .job_form textarea.text_area {
+    width: 500px;
+    height:140px
+}
+form .event_form textarea.text_area {
+    width: 800px;
+    height:140px
+}
 

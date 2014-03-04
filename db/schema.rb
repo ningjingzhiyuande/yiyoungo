@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20140226174346) do
     t.integer  "user_id"
     t.integer  "view_count"
     t.integer  "city"
+    t.string   "address"
     t.string   "expense"
     t.datetime "start_at"
     t.datetime "end_at"

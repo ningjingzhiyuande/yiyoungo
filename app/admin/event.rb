@@ -17,8 +17,30 @@ ActiveAdmin.register Event do
   index :download_links => false do 
   	selectable_column
     id_column
- 
+    column "发布者" do |event|
+    	              event.user.email
+                  end
+    column "活动标题",:title
+    column "活动内容" do |event|
+                       strip_tags(event.content.body)
+                     end
     default_actions
+  end
+
+  controller do
+    def scoped_collection
+      Event.includes([:user,:content])
+    end
+    def create
+      city = params["city"].split("-")[1]
+      params[:event].merge!({ user_id: current_user.id,city: city })
+      create!
+    end
+    def update
+    	city = params["city"].split("-")[1]
+        params[:event].merge!({ user_id: current_user.id,city: city })
+        update!
+    end
   end
 
   

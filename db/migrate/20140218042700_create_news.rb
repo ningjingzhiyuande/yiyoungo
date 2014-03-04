@@ -2,8 +2,10 @@ class CreateNews < ActiveRecord::Migration
   def change
     create_table :news do |t|
       t.string :title
-      t.integer :resource_id,    :null => false
-      t.string  :resource_type,  :null => false
+      t.integer :user_id,    :null => false
+    #  t.string  :resource_type,  :null => false
+      t.integer :view_count,:default=>1
+      t.integer :comment_count,:default=>0
       t.boolean :is_recommend
       t.string :image
       t.integer :status_id

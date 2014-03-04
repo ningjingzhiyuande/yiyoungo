@@ -4,7 +4,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :news,:dependent=>:destroy
+  has_many :events,:dependent=>:destroy
+
+
    def admin?
-       true#role==100
+       role==100
+   end
+
+   def role_name
+     role==1 ? "普通用户" : "管理员"
    end
 end

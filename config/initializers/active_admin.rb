@@ -48,11 +48,11 @@ ActiveAdmin.setup do |config|
       admin.build_menu do |menu|
         
 
-        menu.add :label => "Sites" do |sites|
-          sites.add :label => "Google", :url => "http://google.com", :html_options => { :target => :blank }
-          sites.add :label => "Facebook", :url => "http://facebook.com"
-          sites.add :label => "Github", :url => "http://github.com"
-        end
+       # menu.add :label => "Sites" do |sites|
+        #  sites.add :label => "Google", :url => "http://google.com", :html_options => { :target => :blank }
+       #   sites.add :label => "Facebook", :url => "http://facebook.com"
+       #   sites.add :label => "Github", :url => "http://github.com"
+       # end
       end
     end
 

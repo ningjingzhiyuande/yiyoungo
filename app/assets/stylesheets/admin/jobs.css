@@ -1,0 +1,19 @@
+li{ list-style:none}
+a{ text-decoration:none}
+.job_form { font-size:14px;width:700px;margin: 0px auto}
+.event_form {width: 900px;margin: 0px auto;}
+.job_form  li,.event_form li { height:40px; height:auto; padding:5px; line-height:40px; overflow:hidden;margin:0px auto;}
+.text_int,.ms-txt-component{width:100%;height:24px; line-height:24px; color:#666; margin:0px 5px; padding:0px 10px; border:#CCC solid 1px;}
+
+.sele_op{ width:80px;height:30px; line-height:30px; color:#666; margin:0px 6px; padding:8px 10px; border:#CCC solid 1px;}
+.sele_short{ width:120px; height:40px; line-height:40px; color:#666; margin:0px 6px; padding:8px 5px; border:#CCC solid 1px;}
+.red{ color:#F00}
+.job_form .text_area{margin-left:50px;border:#CCC solid 1px;}
+.text_time{width:50px; height:30px; line-height:30px; color:#666; margin:0px 5px; padding:0px 10px; border:#CCC solid 1px;}
+.check_li label{ display:block; float:left; height:30px; width:130px; margin-left:20px; }
+.sb_li{ width:300px;}
+
+.job_form .p-data-wrap,.event_form .p-data-wrap{width: 270px;float: left;margin-left: 10px;}
+.left{float: left;}
+.event_form .redactor_box{float: left;width:700px;height: 400px}
+.for_sbmit{ text-align:center; display:block; width:100px; height:30px; background:#F60; border:#F60 solid 1px; margin:0 auto}

@@ -1,0 +1,58 @@
+<%=form_for [:admin, @event] do |f| %>
+ <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <div>
+
+    <ul class="event_form">
+  <li><label><span class="red">*</span>&nbsp;&nbsp;活动名称:&nbsp;&nbsp; </label>
+     <%= f.text_field :title ,:required=>true,:class=>"text_int"%><span class="back_value"></span></li>
+  
+    <li><label class="left"><span class="red">*</span>&nbsp;&nbsp;工作城市:&nbsp;&nbsp;</label>
+    <div class="p-data-wrap" id="p-data-wrap_" style="z-index:4"></div><span class="back_value"></span> 
+    </li>
+    <li><label><span class="red">*</span>&nbsp;&nbsp;具体地点:&nbsp;&nbsp; </label>
+     <%= f.text_field :address ,:required=>true,:class=>"text_int"%><span class="back_value"></span></li>
+    <li><label class="left"><span class="red">*</span>&nbsp;&nbsp;活动简述:&nbsp;&nbsp;</label><%= f.fields_for :content, f.object.content || f.object.build_content  do |c| %>
+      <%=c.text_area :body,:class=>"redactor"%>
+      <%end%>
+      
+</li>
+     
+    <li><%=f.submit "提交"%></li>
+
+    </ul>
+
+  <% end %>
+
+  	<script type="text/javascript">
+	$(function(){
+
+	var cityComData=[],cityDefault=[];
+	
+	cityComData = ["北京","天津","上海","重庆","石家庄","唐山"];
+	//cityDefault = ["石家庄","北京"];
+
+
+	$("#p-data-wrap_").msCityPlugin({
+			maxCount:3,		
+			check:'radio',
+			allDataMap:cityDataMap,
+			comData:cityComData,
+			init:cityDefault,
+			name:'city'
+	});
+
+})
+
+	</script>

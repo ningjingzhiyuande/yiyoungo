@@ -3,4 +3,10 @@
 //= require_tree ./admin
 //= require redactor-rails
 //= require_tree ./plugin
+#//= require medium-editor.min
 
+
+#jQuery ($) ->
+#  editor = new MediumEditor('.editable', ->
+#            buttonLabels: 'fontawesome')
+  

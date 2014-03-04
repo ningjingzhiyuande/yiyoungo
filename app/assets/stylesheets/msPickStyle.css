@@ -1,5 +1,5 @@
 
-.p-data-wrap{width: 350px;  border: 1px solid; border-color:#C6C6C6 #EEEEEE #EEE #C6C6C6; background-color: #F9F9F9;padding:4px 4px 0 4px;
+.p-data-wrap{width: 270px;  border: 1px solid; border-color:#C6C6C6 #EEEEEE #EEE #C6C6C6; background-color: #F9F9F9;padding:4px 4px 0 4px;
 	text-align: left; position: relative; zoom:1; font-size: 12px;}
 
 .p-data-wrap ul,.p-data-wrap li{ margin: 0px; padding: 0px; list-style: none;}
@@ -24,7 +24,7 @@
 	height:16px;
 	cursor:pointer;
 	right: 8px; 
-	top: 8px;
+	top: 15px;
 	background:url(/assets/btn.png ) 0px 0px no-repeat;
 	z-index: 111;
 }
@@ -96,7 +96,7 @@
 	cursor:default;
 }
 
-.ms-error-component{width: 200px; height: 28px; line-height: 28px; color: #999; border: 1px solid #ccc; text-align: left; background: #f6f6f6; position: absolute;z-index: 101; font-size: 12px; z-index: 10008; padding-left: 10px; overflow: hidden;}
+.ms-error-component{width: 270px; height: 28px; line-height: 28px; color: #999; border: 1px solid #ccc; text-align: left; background: #f6f6f6; position: absolute;z-index: 101; font-size: 12px; z-index: 10008; padding-left: 10px; overflow: hidden;}
 .ms-ok-component{background: #daeaf2; border: 1px solid #ccc; position: absolute; width: 150px; z-index: 10008;}
 .ms-ok-component .ms-list-component li{height: 28px; line-height: 28px; padding-left: 8px;  border-bottom: 1px solid #daeaf2; background: #fff;}
 .ms-ok-component .ms-list-component li.active{background: #daeaf2}

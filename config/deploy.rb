@@ -10,17 +10,58 @@ set :deploy_to, "/home/#{fetch :user}/apps/#{fetch :application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 set :pty,true
+#set :bundle_flags, "--deployment --quiet --binstubs --path"
 
 set :scm, "git"
 set :repo_url, "git@github.com:shiguodong/yiyoungo.git"
 set :branch, "master"
 set :keep_releases, 5
 
-set :rbenv_type, :user # or :system, depends on your rbenv setup
+#set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.0.0-rc1'
 #set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
-set :rbenv_map_bins, %w{rake gem bundle ruby rails}
-set :rbenv_roles, :all # default value
+#set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+#set :rbenv_roles, :all # default value
+
+set :linked_files, %w{
+  .ruby-version .rbenv-gemsets
+}
+
+set :linked_dirs, %w{tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
+
+set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
+set :keep_releases, 5
+
+set :linked_files, %w{config/database.yml}
+
+set(:config_files, %w(
+  nginx.conf
+  unicorn.rb
+  unicorn_init.sh
+))
+
+# which config files should be made executable after copying
+# by deploy:setup_config
+set(:executable_config_files, %w(
+  unicorn_init.sh
+))
+
+# files which need to be symlinked to other parts of the
+# filesystem. For example nginx virtualhosts, log rotation
+# init scripts etc.
+set(:symlinks, [
+  {
+    source: "nginx.conf",
+    link: "/etc/nginx/sites-enabled/#{fetch(:full_app_name)}"
+  },
+  
+  {
+    source: "unicorn_init.sh",
+    link: "/etc/init.d/unicorn_#{fetch(:full_app_name)}"
+  }
+])
+
+
 
 namespace :deploy do
 	 
@@ -33,20 +74,9 @@ namespace :deploy do
     end
   end
   
+ 
 
-
-  task :setup_config do
-  	on roles(:app) do 
-    "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{fetch :application}"
-    "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{fetch :application}"
-    "cd #{shared_path} && echo '2.0.0-rc1'>>.ruby-version"
-    "cd #{shared_path} && echo 'ngo-china'>>.rbenv-gemsets"
-    "mkdir -p #{shared_path}/config"
-    puts File.read("config/database.yml"), "#{shared_path}/config/database.yml"
-    puts "Now edit the config files in #{shared_path}."
-    end
-  end
-  before "deploy:check", "deploy:setup_config"
+ # after "deploy:check", "deploy:setup_config"
 
   
 end

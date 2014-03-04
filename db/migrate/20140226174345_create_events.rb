@@ -5,6 +5,7 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :user_id
       t.integer :view_count
       t.integer :city
+      t.string :address
       t.string  :expense
       t.timestamp :start_at
       t.timestamp :end_at
