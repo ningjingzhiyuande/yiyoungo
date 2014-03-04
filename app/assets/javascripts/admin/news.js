@@ -16,10 +16,6 @@ $(".news").validate({
     }
   }
 });
-})
-
-
-
 $(".form_job").validate({
   rules: {
     "job[title]":{
