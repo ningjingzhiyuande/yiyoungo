@@ -24,19 +24,18 @@ set :rbenv_ruby, '2.0.0-rc1'
 #set :rbenv_roles, :all # default value
 
 set :linked_files, %w{
-  .ruby-version .rbenv-gemsets
+  .ruby-version .rbenv-gemsets config/database.yml
 }
 
-set :linked_dirs, %w{public/system public/uploads}
+set :linked_dirs, %w{public/system public/uploads public/assets}
 
 set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
 set :keep_releases, 5
 
-set :linked_files, %w{config/database.yml}
+
 
 set(:config_files, %w(
   nginx.conf
-  unicorn.rb
   unicorn_init.sh
 ))
 
@@ -72,6 +71,13 @@ namespace :deploy do
            run "/etc/init.d/unicorn_#{application} #{command}"
         end
     end
+    before :deploy, "deploy:check_revision"
+  # only allow a deploy with passing tests to deployed
+   before :deploy, "deploy:run_tests"
+  # compile assets locally then rsync
+   after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
+   after :finishing, 'deploy:cleanup'
+
   end
   
  
