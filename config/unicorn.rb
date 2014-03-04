@@ -4,7 +4,7 @@ pid "#{root}/tmp/pids/unicorn_ngo-china.pid"
 stderr_path "#{root}/log/unicorn_ngo-china.stderr.log"
 stdout_path "#{root}/log/unicorn_ngo-china.log"
 
-listen "/tmp/unicorn_ngo-china.blog.sock"
+listen "/tmp/unicorn_ngo-china.sock"
 worker_processes 4
 timeout 30
 #preload_app true

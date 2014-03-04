@@ -27,7 +27,7 @@ set :linked_files, %w{
   .ruby-version .rbenv-gemsets config/database.yml
 }
 
-set :linked_dirs, %w{public/system public/uploads public/assets}
+set :linked_dirs, %w{public/system public/uploads tmp/pids tmp/cache tmp/sockets}
 
 set :default_env, { path: "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH" }
 set :keep_releases, 5
@@ -35,8 +35,8 @@ set :keep_releases, 5
 
 
 set(:config_files, %w(
-  nginx.conf
-  unicorn_init.sh
+  config/nginx.conf
+  config/unicorn_init.sh
 ))
 
 # which config files should be made executable after copying
@@ -50,12 +50,12 @@ set(:executable_config_files, %w(
 # init scripts etc.
 set(:symlinks, [
   {
-    source: "nginx.conf",
+    source: "config/nginx.conf",
     link: "/etc/nginx/sites-enabled/#{fetch(:full_app_name)}"
   },
   
   {
-    source: "unicorn_init.sh",
+    source: "config/unicorn_init.sh",
     link: "/etc/init.d/unicorn_#{fetch(:full_app_name)}"
   }
 ])
@@ -64,19 +64,14 @@ SSHKit.config.command_map.prefix[:rake].push("bundle exec")
 
 namespace :deploy do
 	 
-  %w[start stop restart].each do |command|
-    desc "#{command} unicorn server"
-    task command do 
-        on roles(:app), in: :sequence, wait: 5 do
-           run "/etc/init.d/unicorn_#{application} #{command}"
-        end
-    end
-    before :deploy, "deploy:check_revision"
+ 
+   before :deploy, "deploy:check_revision"
   # only allow a deploy with passing tests to deployed
-   before :deploy, "deploy:run_tests"
+   #before :deploy, "deploy:run_tests"
   # compile assets locally then rsync
    after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
    after :finishing, 'deploy:cleanup'
+   before :finished ,'deploy:restart'
 
   end
   
