@@ -63,19 +63,16 @@ set(:symlinks, [
 SSHKit.config.command_map.prefix[:rake].push("bundle exec")
 
 namespace :deploy do
-	 
- 
-   before :deploy, "deploy:check_revision"
+
+    before :deploy, "deploy:check_revision"
   # only allow a deploy with passing tests to deployed
    #before :deploy, "deploy:run_tests"
   # compile assets locally then rsync
    after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
    after :finishing, 'deploy:cleanup'
-   before :finished ,'deploy:restart'
+   before :finished ,'deploy:start'
 
-  end
-  
- 
+
 
  # after "deploy:check", "deploy:setup_config"
 
