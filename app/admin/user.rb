@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ActiveAdmin.register User do
   permit_params :email, :password, :password_confirmation,:role
   index do

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ActiveAdmin.register Job do
   #scope_to :current_user
   form :partial => "form"

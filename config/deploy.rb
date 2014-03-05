@@ -4,13 +4,14 @@ lock '3.1.0'
 #server "192.81.135.229", :web, :app, :db, primary: true
 
 set :application, "ngo-china"
+set :full_app_name, "#{fetch(:application)}"
 set :default_stage, "production"
 set :user, "www"
 set :deploy_to, "/home/#{fetch :user}/apps/#{fetch :application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
 set :pty,true
-#set :bundle_flags, "--deployment --quiet"
+#set :bundle_flags, "--no-deployment"
 
 set :scm, "git"
 set :repo_url, "git@github.com:shiguodong/yiyoungo.git"
@@ -53,7 +54,10 @@ set(:symlinks, [
     source: "config/nginx.conf",
     link: "/etc/nginx/sites-enabled/#{fetch(:full_app_name)}"
   },
-  
+  {
+  	source: "config/database.yml",
+    link: "/#{release_path}/config/#{fetch(:full_app_name)}"
+  },
   {
     source: "config/unicorn_init.sh",
     link: "/etc/init.d/unicorn_#{fetch(:full_app_name)}"
@@ -64,11 +68,11 @@ SSHKit.config.command_map.prefix[:rake].push("bundle exec")
 
 namespace :deploy do
 
-    before :deploy, "deploy:check_revision"
+    before :deploy, "deploy:setup_config"
   # only allow a deploy with passing tests to deployed
    #before :deploy, "deploy:run_tests"
   # compile assets locally then rsync
-   after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
+   #after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
    after :finishing, 'deploy:cleanup'
    before :finished ,'deploy:start'
 

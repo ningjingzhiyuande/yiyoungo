@@ -1,0 +1,9 @@
+namespace :bundle do 
+desc 'Restart unicorn application'
+  task :install do
+    on roles(:app), in: :sequence do
+      execute "rbenv hash"
+      execute "bundle install"
+    end
+  end
+end
