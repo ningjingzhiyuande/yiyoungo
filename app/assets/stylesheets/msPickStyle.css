@@ -59,7 +59,7 @@
 	_line-height:normal;
 	display:inline-block;
 	white-space:nowrap;
-	background:transparent url(/assets/pickpad.gif) no-repeat left top;
+	background:transparent url(<%=asset_path('pickpad.gif')%>) no-repeat left top;
 	margin:0 5px 4px 2px;
 	padding-left:8px;
 	cursor:default;
@@ -69,13 +69,13 @@
 	color:#1357A2;
 }
 .p-data-wrap .ms-selected-item .delete-component {
-	background:url(/assets/delete.gif) no-repeat 0 -2px;
+	background:url(<%=asset_path('delete.gif')%>) no-repeat 0 -2px;
 	display:inline-block;
 	height:20px;
 	width:20px;
 	text-indent:-99999px;
 	margin-left:6px;
-	background:transparent url(/assets/pickpad.gif) no-repeat right top;
+	background:transparent url(<%=asset_path('pickpad.gif')%>) no-repeat right top;
 	cursor:pointer;
 }
 .p-data-wrap .ms-selected-item:hover {
@@ -113,7 +113,7 @@
 .ms-pick .h-tab .tab-menu-component{float: left; padding: 0 13px; border-right: 1px solid #ccc; cursor: pointer;}
 .ms-pick .h-tab .tab-menu-component.active{ font-weight: bold;}
 .ms-pick .w-h-tab-component{border-bottom: 1px solid #ccc; position:relative; height: 25px; line-height: 25px; }
-.ms-pick .w-h-tab-component .close-component{ position: absolute; right: 5px; top: 5px; width: 13px; height: 13px; overflow: hidden; text-indent: -9999em; cursor: pointer; display: block; background: 0 0 url("/assets/close.gif");}
+.ms-pick .w-h-tab-component .close-component{ position: absolute; right: 5px; top: 5px; width: 13px; height: 13px; overflow: hidden; text-indent: -9999em; cursor: pointer; display: block; background: 0 0 url("<%=asset_path('close.gif')%>");}
 .ms-pick .w-h-tab-component .close-component:hover{background-position: right 0;}
 
 
@@ -126,7 +126,7 @@
 .ms-pick .c-tab .tab-con-component.tab-con-width .ms-h3-component.ms-mt10{padding-top: 10px;}
 
 .ms-pick .c-tab .tab-con-component.tab-con-width .fold-head-component span{display: inline-block; height: 24px; width: 78px; line-height: 24px;padding: 1px 0 0 6px;}
-.ms-pick .c-tab .tab-con-component.tab-con-width .fold-head-component span label{display: inline-block;  padding-right: 12px;  cursor: pointer; background: right -32px no-repeat url("/assets/select.gif") ;}
+.ms-pick .c-tab .tab-con-component.tab-con-width .fold-head-component span label{display: inline-block;  padding-right: 12px;  cursor: pointer; background: right -32px no-repeat url("<%=asset_path('select.gif')%>") ;}
 
 .ms-pick .c-tab .tab-con-component.tab-con-width .fold-head-component span.active{background: #daeaf2;}
 .ms-pick .c-tab .tab-con-component.tab-con-width .fold-head-component span.active label{ background-position: right 3px;}
