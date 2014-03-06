@@ -50,7 +50,7 @@ body{ background:#f8f8f8}
 .AC_info,.ZP_info{ float:left; padding-left:25px; width:425px;}
 .AC_info h3{  height:24px;  font-size:16px;}
 .AC_info h3  a{ display:block; float:left; color:#333}
-.AC_info h3  span{ font-size:12px; font-weight:normal; color:#FFF; display:block; width:52px; height:19px; line-height:20px; text-align:center; background:url(<%=asset_path('bm_bk.jpg')%>); float:left; margin-top:-2px}
+.AC_info h3  span{ font-size:12px; font-weight:normal; color:#FFF; display:block; width:52px; height:19px; line-height:20px; text-align:center; background:url("<%=asset_path('bm_bk.jpg')%>"); float:left; margin-top:-2px}
 .AC_info h3 span a{ color:#FFF;}
 .AC_info dl{ font-size:14px; line-height:24px;}
 .AC_info dl dt{ float:left; color:#999}
